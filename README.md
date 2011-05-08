@@ -22,7 +22,7 @@ Usage
 After gathering the BGP security ranking for your logs, it will be prepended to
 the log files with the following format:
 
-<ASN>,<BGP ranking value in float>,original line
+    ASN,BGP ranking value in float,original line
 
 So you can use whatever tools to sort, merge, cut the ranked logs. For example,
 you can use sort to sort with the higher score value:
