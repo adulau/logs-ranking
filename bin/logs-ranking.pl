@@ -4,7 +4,20 @@ use strict;
 
 use Net::Whois::RIS;
 use Socket;
+use Getopt::Std;
+
 $| = 1;
+
+getopt( 'f', \my %opts );
+
+if ( !exists( $opts{'f'} ) ) {
+
+    print "Usage of logs-ranking.pl:\n";
+    print "     -f <format>\n";
+    print "\n";
+    print "Formats supported are:  apache\n";
+    die();
+}
 
 my %iporigin;
 my %ipranking;
@@ -75,11 +88,16 @@ sub rankingAdd {
 
 }
 
-
 while (<STDIN>) {
     my $saved = $_;
-    my @ipext = split( / /, $_, );
-    my $ip    = $ipext[0];
+    my ( @ipext, $ip );
+    if ( $opts{'f'} =~ m/apache/i ) {
+        @ipext = split( / /, $_, );
+        $ip = $ipext[0];
+    }
+    else {
+        die "Unsupported format\n";
+    }
 
     if ( not ipExist($ip) ) {
         ipAdd( $ip, getASN($ip) );
