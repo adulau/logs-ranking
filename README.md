@@ -27,9 +27,8 @@ the log files with the following format:
 So you can use whatever tools to sort, merge, cut the ranked logs. For example,
 you can use sort to sort with the higher score value:
 
-    sort -r -g -t"," -k2 myrankedlogfiles.txt
+    sort -r -g -t"," -k2 www.foo.be-access.log-ranked
 
-Software required
 Software required
 -----------------
 
