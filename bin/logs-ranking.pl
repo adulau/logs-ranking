@@ -75,19 +75,6 @@ sub rankingAdd {
 
 }
 
-#my $ip = "8.8.8.8";
-#print "exist !" if ipExist($ip);
-#print "not existing !" if not ipExist($ip);
-
-#print BGPRankingLookup(getASN("8.8.8.8"));
-#my $origin = getASN("8.8.8.8");
-
-#ipAdd($ip,$origin);
-#if (ipExist($ip)) {
-#        print $iporigin{$ip};
-#}
-#print "exist !" if ipExist($ip);
-#print "not existing !" if not ipExist($ip);
 
 while (<STDIN>) {
     my $saved = $_;
@@ -106,4 +93,3 @@ while (<STDIN>) {
     print $iporigin{$ip} . "," . $ipranking{$ip} . "," . $saved;
 }
 
-#print BGPRankingLookup("AS5577");
