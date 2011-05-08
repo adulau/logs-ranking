@@ -17,7 +17,7 @@ logs-ranking is currently supporting Apache common/combined logs format.
 Usage
 -----
 
-    cat ../logs/www.foo.be-access.log|  perl logs-ranking.pl >www.foo.be-access.log-ranked
+    cat ../logs/www.foo.be-access.log|  perl logs-ranking.pl -f apache >www.foo.be-access.log-ranked
 
 After gathering the BGP security ranking for your logs, it will be prepended to
 the log files with the following format:
