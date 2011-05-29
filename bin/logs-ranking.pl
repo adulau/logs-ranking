@@ -33,7 +33,8 @@ sub BGPRankingLookup {
     while (<$bgpranking>) {
         $x = $x . $_;
     }
-    return $x;
+    my @a = split (/\n/, $x);
+    return $a[1];
 
     $bgpranking->shutdown();
 }
